@@ -12,7 +12,7 @@ steps:
         from_secret: DRONE_GITHUB_TOKEN
       GIT_DEPTH: "1"
     commands:
-      - git clone https://$${DRONE_GITHUB_USERNAME}:$${DRONE_GITHUB_TOKEN}@github.com/DivineTaminang2/drone-project.git ./repo
+      - git clone https://$${DRONE_GITHUB_USERNAME}:$${DRONE_GITHUB_TOKEN}@github.com/drone-project.git ./repo
 
   - name: print-message
     image: alpine:latest
