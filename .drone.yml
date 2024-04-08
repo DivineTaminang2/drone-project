@@ -1,0 +1,21 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: clone-repository
+    image: alpine/git
+    environment:
+      DRONE_GITHUB_USERNAME:
+        from_secret: DRONE_GITHUB_USERNAME
+      DRONE_GITHUB_TOKEN:
+        from_secret: DRONE_GITHUB_TOKEN
+      GIT_DEPTH: "1"
+    commands:
+      - git clone https://$${DRONE_GITHUB_USERNAME}:$${DRONE_GITHUB_TOKEN}@github.com/DivineTaminang/landlords-checking-tenants.git ./repo
+
+  - name: print-message
+    image: alpine:latest
+    commands:
+      - echo "Hello, Drone CI! This is a simple pipeline. Thank you very much"
+
