@@ -17,5 +17,5 @@ steps:
   - name: print-message
     image: alpine:latest
     commands:
-      - echo "Hello, Drone CI! This is a simple pipeline. Thank you very much"
+      - echo "Hello, Drone CI! This is a simple pipeline. Thank you very much !"
 
